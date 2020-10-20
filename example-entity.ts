@@ -17,6 +17,7 @@ import { CreateDateColumn } from 'typeorm';
 import { User } from '../../auth/entities/user.entity';
 import { UserDTO } from '../../auth/dto/user.dto';
 
+// Adding comments
 @Entity()
 @ObjectType()
 export class ProductStyle extends BaseEntity {
@@ -51,7 +52,7 @@ export class ProductStyle extends BaseEntity {
     type => User,
     user => user.productStylesCreated,
     {
-      eager: true,
+      eager: lazy,
     },
   )
   @Field(type => UserDTO)
